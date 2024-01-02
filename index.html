@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>わたしのホームページ</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav {
+            width: 18%;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        iframe {
+            display: block;
+            border: none; /* ボーダーがある場合に垢を取るため */
+            width: 100%;
+            height: 100vh; /* 100% ではなく 100vh を使用して画面高さに合わせます */
+        }
+    </style>
 </head>
-<frameset cols=18,82>
-    <frame src="menu.htm" marginheight="0" marginwidth="0" scrolling="auto" name="left">
-    <frame src="top.htm" marginheight="0" marginwidth="0" scrolling="auto" name="right">
-    <noframes>
-        <body></body>
-    </noframes>
-</frameset>
+<body>
+<nav>
+    <!-- Content for the left frame goes here -->
+    <iframe title="sidebar" src="menu_content.html" name="left" width="100%" height="100%"></iframe>
+</nav>
+<main>
+    <!-- Content for the right frame goes here -->
+    <iframe title="main" src="top_content.html" name="right" width="100%" height="100%"></iframe>
+</main>
+</body>
 </html>
